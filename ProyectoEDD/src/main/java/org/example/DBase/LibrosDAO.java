@@ -50,13 +50,20 @@ public class LibrosDAO implements IntefazDAO{
             rowCount=pstm.executeUpdate();
             return rowCount>0;
         }
-        public ArrayList obtenerTodo() throws SQLException {
-            String sql = "SELECT * FROM Productos";
-            ArrayList<Libro> libros=new ArrayList<>();
-            PreparedStatement pstm= Singleton.getInstance("Libros.db").getConnection().prepareStatement(sql);
-            ResultSet rs=pstm.executeQuery();
-            while (rs.next()){
-                libros.add(new Libro(rs.getInt("id"),rs.getString("Titulo"),rs.getString("Autor"),rs.getString("Genero"),rs.getInt("Anio"),rs.getDouble("Precio")));
+        public ArrayList<Libro> obtenerTodo() throws SQLException {
+            String sql = "SELECT * FROM Libros"; // Cambié "Productos" por "Libros"
+            ArrayList<Libro> libros = new ArrayList<>();
+            PreparedStatement pstm = Singleton.getInstance("Libros.db").getConnection().prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+            while (rs.next()) {
+                libros.add(new Libro(
+                        rs.getInt("id"),
+                        rs.getString("Titulo"),
+                        rs.getString("Autor"),
+                        rs.getString("Genero"),
+                        rs.getInt("Anio"),
+                        rs.getDouble("Precio")
+                ));
             }
             return libros;
         }
