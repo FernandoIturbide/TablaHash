@@ -1,19 +1,23 @@
 package org.example.Controlador;
 
-public class ControladorTabla {
-    
-    public static void main(String[] args) {
-        HashTable<String, Integer> hashTable = new HashTable<>(10);
+import java.awt.event.MouseAdapter;
 
-        hashTable.insert("uno", 1);
-        hashTable.insert("dos", 2);
-        hashTable.insert("tres", 3);
+import org.example.Modelo.ModeloLibros;
+import org.example.Vista.Vista;
 
-        System.out.println("Valor asociado a 'dos': " + hashTable.get("dos"));
+public class ControladorTabla extends MouseAdapter{
+    private Vista view;
+    private ModeloLibros modelo;
+    private int index;
+    private String titulo, autor, genero, anio, precio;
 
-        hashTable.remove("dos");
-
-        System.out.println("Valor asociado a 'dos' después de eliminarlo: " + hashTable.get("dos"));
+    public ControladorTabla(Vista view, ModeloLibros modelo) {
+        this.view = view;
+        modelo = new ModeloLibros();
+        this.view.getSacarticket().addMouseListener(this);
+        this.view.getGuardar().addMouseListener(this);
+        this.view.getBorrar().addMouseListener(this);
     }
+    
     
 }
