@@ -23,7 +23,7 @@ public class Vista extends JFrame  implements ActionListener, ItemListener{
     private JScrollPane scrollpane1,scrollpane,scrollPane2, scrollPane3; 
     private JTextArea textarea,textarea1,textarea2, textarea3;
     private TablaHashLibros tablaHashLibros;
-    private String temp="";
+    private String temp="",nomAdmin="";
     private Productos productos = new Productos(); 
     private cobro ventanaPago;
     HashMap<String, Map<String, Double>> tabla = new HashMap<>();
@@ -36,7 +36,8 @@ public class Vista extends JFrame  implements ActionListener, ItemListener{
         getContentPane().setBackground(new Color(0,35,53));
         setIconImage(new ImageIcon(getClass().getResource("images/ivono.png")).getImage());
 
-        
+        Inicio interfaz12=new Inicio();
+        nomAdmin=interfaz12.text;
         
         mb = new JMenuBar();
         mb.setBackground(new Color(0,35,53));
@@ -108,13 +109,13 @@ public class Vista extends JFrame  implements ActionListener, ItemListener{
         miSalir.addActionListener(this);
         
 
-        ImageIcon imagen = new ImageIcon("/images/logo3.png");
+        ImageIcon imagen = new ImageIcon("images/logo3.png");
         labelLogo = new JLabel(imagen);  
         labelLogo.setBounds(5,5,250,100);
         add(labelLogo);
 
             
-        labelBienvenido = new JLabel("Bienvenido ");  
+        labelBienvenido = new JLabel("Bienvenido "+nomAdmin);  
         labelBienvenido.setBounds(250,30,400,50);
         labelBienvenido.setFont(new Font("Andale Mono", 1, 32));
         labelBienvenido.setForeground(new Color(255, 255, 255));
@@ -724,7 +725,12 @@ public class Vista extends JFrame  implements ActionListener, ItemListener{
             JOptionPane.showMessageDialog(null, "Desarrollado por WAPYJ \n        www.wapyj.com");
         }
         if (e.getSource() == miSalir){
-            System.exit(0);
+            Inicio interfaz11 = new Inicio();
+         interfaz11.setBounds(0,0,350,450);
+         interfaz11.setVisible(true);
+         interfaz11.setResizable(false);
+         interfaz11.setLocationRelativeTo(null);
+            this.setVisible(false);
         }
         if (e.getSource() == miNuevo){
             Libro1.setText("");

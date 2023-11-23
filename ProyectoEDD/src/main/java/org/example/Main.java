@@ -1,14 +1,16 @@
 package org.example;
 
-import java.sql.SQLException;
-import java.util.LinkedList;
+import org.example.Vista.Inicio;
 
-import org.example.Controlador.TablaHashLibros;
-import org.example.Modelo.Libro;
-import org.example.Modelo.ModeloLibros;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
+        Inicio interfaz11 = new Inicio();
+         interfaz11.setBounds(0,0,350,450);
+         interfaz11.setVisible(true);
+         interfaz11.setResizable(false);
+         interfaz11.setLocationRelativeTo(null);
+        /* 
         // ... (código existente)
 
         // Crear instancia de la tabla hash
@@ -31,7 +33,7 @@ public class Main {
         tablaHashLibros.eliminarLibro(2);
 
         // Imprimir la tabla hash
-        tablaHashLibros.imprimirTabla();
+        tablaHashLibros.imprimirTabla();*/
     }
 }
 
