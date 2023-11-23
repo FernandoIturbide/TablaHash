@@ -109,7 +109,7 @@ public class Vista extends JFrame  implements ActionListener, ItemListener{
         miSalir.addActionListener(this);
         
 
-        ImageIcon imagen = new ImageIcon("images/logo3.png");
+        ImageIcon imagen = new ImageIcon(getClass().getResource("images/logo3.png"));
         labelLogo = new JLabel(imagen);  
         labelLogo.setBounds(5,5,250,100);
         add(labelLogo);

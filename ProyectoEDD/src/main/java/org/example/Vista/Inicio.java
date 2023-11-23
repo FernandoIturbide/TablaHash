@@ -16,10 +16,7 @@ public class Inicio extends JFrame implements ActionListener{
         getContentPane().setBackground(new Color(0,35,53));
         setIconImage(new ImageIcon(getClass().getResource("images/Logo.png")).getImage());
         
-        ImageIcon imagen = new ImageIcon("images/logo3.png");
-        label1 = new JLabel(imagen);
-        label1.setBounds(25,15,300,150);
-        add(label1);
+        
     
         label2 = new JLabel("Sistema de Control ticket");
         label2.setBounds(55,135,300,30);
@@ -53,6 +50,10 @@ public class Inicio extends JFrame implements ActionListener{
         boton1.setForeground(new Color(55,194,209));
         boton1.addActionListener(this);
         add(boton1);
+        ImageIcon imagen = new ImageIcon(getClass().getResource("images/logo3.png"));
+        label1 = new JLabel(imagen);
+        label1.setBounds(25,15,300,150);
+        add(label1);
       }
     
     
