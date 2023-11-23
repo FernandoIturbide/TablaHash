@@ -1,5 +1,6 @@
 package org.example.Modelo;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.sql.SQLException;
 import javax.swing.table.TableModel;
 import javax.swing.event.TableModelListener;
@@ -135,16 +136,16 @@ public class ModeloLibros extends LibrosDAO implements TableModel{
         
     }
 
-    public void CargarDatos(){
+    public LinkedList<Libro> CargarDatos() {
         try {
-            ArrayList<Libro> tirar=LDAO.obtenerTodo();
-            System.out.println(tirar);
-            datos=LDAO.obtenerTodo();
-        }catch (SQLException sql){
+            datos = LDAO.obtenerTodo(); // Asigna directamente el resultado de obtenerTodo() a datos
+            
+        } catch (SQLException sql) {
             System.out.println(sql.getMessage());
         }
-
+        return null;
     }
+    
     public boolean agregarBarco(Libro libros){
         boolean resultado=false;
         try {
