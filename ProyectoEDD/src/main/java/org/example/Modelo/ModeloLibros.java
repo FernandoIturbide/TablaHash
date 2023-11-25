@@ -1,5 +1,6 @@
 package org.example.Modelo;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.sql.SQLException;
 import javax.swing.table.TableModel;
 import javax.swing.event.TableModelListener;
@@ -135,16 +136,16 @@ public class ModeloLibros extends LibrosDAO implements TableModel{
         
     }
 
-    public void CargarDatos(){
+    public LinkedList<Libro> CargarDatos() {
         try {
-            ArrayList<Libro> tirar=LDAO.obtenerTodo();
-            System.out.println(tirar);
-            datos=LDAO.obtenerTodo();
-        }catch (SQLException sql){
+            datos = LDAO.obtenerTodo(); 
+            
+        } catch (SQLException sql) {
             System.out.println(sql.getMessage());
         }
-
+        return null;
     }
+    //Cargar librors de la base de datos, gracias a este metodo se puede obtener los datos de la base de datos y mostrarlos en la tabla. Usa los comando de SQLite
     public boolean agregarBarco(Libro libros){
         boolean resultado=false;
         try {

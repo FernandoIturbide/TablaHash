@@ -7,6 +7,7 @@ public class Libro {
     private String Genero;
     private int Anio;
     private double precio;
+    //Clase tipo libro para la tabla hash
 
     public Libro() {
     }
